@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "this is Namaste React by Abhishek ",
   "scripts": {
+    "start": "parcel index.html",
     "test": "jest"
   },
   "repository": {
@@ -10,7 +11,6 @@
     "url": "git+https://github.com/abhigupta639415/Namaste-react.git"
   },
   "keywords": [
-    "react",
     "namaste",
     "react"
   ],
@@ -26,5 +26,9 @@
   "dependencies": {
     "react": "^19.2.3",
     "react-dom": "^19.2.3"
-  }
+  },
+  "browserslist": [
+    "last 2  versions" 
+  ]
+
 }
