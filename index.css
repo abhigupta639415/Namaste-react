@@ -1,3 +1,36 @@
-#heading {
-    color : red;
+
+.header { 
+    display: flex;
+    justify-content: space-between;
+    background-color: #f0f0f0;
+    padding: 0px 20px;
+    border: 1px solid #d3d3d3;
+}
+.logo {
+    
+    height: 100px;
+    width: 100px;
+}
+.logo:hover {
+    background-color: #031211;
+    cursor: pointer;
+}
+.logo-img {
+    border-radius: 20px;
+    height: 100px;
+    width: 100px;
+}
+.list {
+    
+    list-style-type: none;
+    font-size: 20px;
+}
+.list:hover {
+    cursor: pointer;
+}
+.list-items{
+    gap: 30px;
+    list-style-type: none;
+    display: flex;
+    font-weight: bold;
 }

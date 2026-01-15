@@ -2,24 +2,56 @@
 import React from "react" ;
 import ReactDOM from "react-dom/client" ;
 
-// React.createElement => Object => HTMLElement(render)
-const heading = React.createElement("h1",{id:"heading"},"This is Heading");
-const root = ReactDOM.createRoot(document.getElementById("root"));
-const jsxHeading = (
-    <h1 id="heading">Hello JSX !! 🚀</h1>
-);
 
+const Header = () =>{
+     return (
+        <div className="header">
+            <div className="logo">
+                <img className="logo-img" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAwFBMVEX////6sUJYWVtRUlRPUFL6sD9VVlj8sEBMTU/6rzv6rTOgoKH6rjj6rTLc3N1gYGSKi4xISUzDwsT4+Pjt7e3+6tD/+vNbXF7//Pf8qin+7tj+8uLNzc1FR0nw8PCwsLD8yIFnaGrk5OX92q3916WSkpT7u1/+37j+5MT+8N1zdHaCg4SOjpC+vr95env8qSP8uFb90Zj8wnH8zo+rq6380JP9wG/9xn38tU06Oz793rT9uVz8phD/4L/7uFH92qk2uKlUAAAT1UlEQVR4nO1d53qqShRFKQIyKiIo9i5q7EY95iS+/1vdKSBDseUaJOdj/UiscVZ2nc2eLcMkSJAgQYIECRIkSJAgQYIECRIkSJAgQYIECRL88xifVpuT8epV/BxGHwsIkNEffJ+h135kPc9GbQjMnW5UM0rqMSmOFTNV+aFFPRM6UMweutGTQe+hd27kjPkLNNsyM+AT34JU9w+9NZX5DQx1OQP69k2gDB96K8hkQOwZGqmMsrNv9+THGK7kTOYQezvcKRnT8YdfGaX9yHs/pIyyfv6SnoujmZFX9u0eyMinB95bQ0r6mGuKHhW4SNnWs5ECF/xIeDvBNytxj4fQkhwRVheQbPuRN68V14TjCiNDia23MIdntzHWaR9ZqVY9DsXQ9QpjIJlbUSzzf+AkZ6gIOB45NE4SMM39meNGMRdgdX6dsTcXi5ShmxlpGdlSv4mlFCqFlakc3jemk8INgbzsr00nkFiy2a7pyroPE5q4i7AKXcUhGLF1GBbhoztAxNs3lQ1U1INJ8gIdmO8MStgOv0CEK4+SOqgcJHkEfx8BzldgzoMD5kZOoWctXsYhcGTCjK0a5Wq/g6GSASNys1Kr6pb1OTrWcFhE4rIAzDmNNvInaFO1kk1oqmsgSdg16UvX88Y2YhiyHc+qS7AwTRNA/NWhcUrKEvqcEQBW+y/0tgrOdDaKVN39PRD2DFZT2zEN269Z/21UoaId0I2VyR8OhyUkk9ozhqm8L6FrOcJ8biGdLFnuS2B3Oi4z0t+DBVNXW2Ip2d4u7+Obmo6AnVZWagZE7SAd4Op1E+i1AxSpkjn0DBhQzIolQQFnpA+rwqxl26WOZNtHtR/Kg6JF301oEKoy5qub0LFURv22gnPOvryA+nzs7zImktmHnWpbzjZkvxhHvvC7gRge3bsbBcfGsUlc5I6UNI7AxM9mCKMl+QU9KTbOys58tLQTJSBDKt4bKQmHgwrAvmQFSGWjauLXrBXsUKH7lXToYP9udsiT1lJSrAPGEdAM+7JJBNqWldNoDcwNvldZKofRaAjsbRIS3geAwX8vp06bxUd8bRAB+lKXoaEodoZiLE1zYSrOxq+agVmoeXBeuIFxZV9DyiybixUTb1Qy5+CGzM7NUKx+33IjQOXY71HGZoyJDx2/9+MtQISNW5dZmWbcd+vfQQ1uYYmv7wPw/uLF/Ax6Jt5FGG1gxt2kvov+Qk7t17xpHm+/Nhy5ejb3zBU9HdUh3M0rbe8msTuZzyfTQgH+uPV+bfb2p/5jq3sOjHFI2vXWwMuesbff32rEnWEoCo0S/p2//dJfzhD9hIr49jbTyBOlbeFt4FDKZQtv20E4w1I2gmX+D2CGzS26mWOzmtacCpjHVq1rWk6YNOFtbcrBO6VCKMOSwDajXPDDKIj1XK6O/ExOJd6m04Aus/WniG53G3ko0onaRXdCtVTrCFy8XWxBbBWLA8TNEVELMtU4gSjrRJ0x9QahHsqwJabFCM2zOIX/zu1AY5rTon3vAs6KhbVUyyJhqOTldTXP5BodwnAgZpmtOMC3wxhqZSHNtZ5K4iryYoHRVKhlxUaH3AtHt5N2nnI8DWRoy6KuziHDtM1QbUGGl2U4E9NpNjpXo5XZAtNkRchQRAyF+YUXTti0av/jzwyZrPqGf2+RCeZVwibPlqCWljHdMIYTATJ8eyqLa+gKkGHJZqhBhraquZiqE0SoI5z/8ZMzQ22Oc5ZSAz2TE9Lo8RkmVWgU4B8qzYMMS410Oi3czIeehhwnFJgu5zIUfH58K6ZZJNcBm2axbZUGncnb2VxbnUI2Oy8y9jOD7WDaJe/Ll98Gg1mnsPV94oxDDC+pyvNRFF2G+SZkSLy8C8gsjWRWEm2GDJSNRgm61C2db2ulUtN3WwvohIAYTp5N5CK2LGSYIwzLiKHfj0MHkuZmDKL6HPeACKaDxvBjGFAMoRnlhYAfh9EL65QmcH6F+w66XMQM5wJkWCcMBcQwKKiWKGDHWP8ze8IHwn8kYpiPKm2DCRRiKGKGbBd5GsrL5Yg/KXIcScFKoX/jMWRZxDBdfsbfugfNctplKGKGHXcxqh23u51gplPTrWN/ter3PvXxI51Pc2yH6XRUDKFVQIZFimFaOD8H9YkL8+q10WapKDKQFQX9gr9T69Od9XuoNJigEBXDnIoYzogdwiQTMmw4FoJ9gp1fuqiuDqas8CkPeEkBYD+6Q5YlIsE017392qdgxgUYqmeNzKrQZkTavRj9D9PP7gwJSO2bksxxhKEYFUNo95BhizCEoRAyFIvucgaCyLLntdTavHyJHoEiDz+vf2BdJAz9icWP4Q0z3JK8FHLL+zY2Wj3bse8be0W5So8IUv662mTSsmWoRrUFhp4NMswShjB1gQxZv+UR9E3pNj9sk2B45ZKFHSwiY4g8m59haMqoL+X7+BGO/ZA/QfBmB4uoNvka/DzIcIAZclA/EcNy8HUrcN3+/LgsxukLGKbz2zzcr80mgjDZovsBhsbwAQESSPwFa5xEzTCPPhCZhsAhcbJhG5tx6k4LpHFBU52AT3vsn4WjNBT8qbcVHiF4SUIpjSJJFxQYtEM+r5m3P5CLiqHjvCmoXv2xQkyQV4CyXLdhVtp/b6+XCghlKYccXmg6/1HuGfuUe1AKyFDwXo2wQGDlirl8twzqQrdhbQ4gRJNDmopLXNQMmazoF6FHfaqBDFQGG+dyFNxefH5a5HBTtW0G8wF54/+4rho5Q1QlpMF54n3Nr35KivTrG6P2wYS7CggATL4Nk+7KSgpwDLib3JlhdCVhrUObouip8lWWXoKS0kfKWbHWQKa585JsDkcVYxOwWX+fcE6MniGjvamOMbKi14/uvUKRd0ghK6dQo+Pl1MqoHnxi5H0HEuqvYAg/dop1RxDfvAn/yPQslqjc6HBpf8ErfN/Y+zyT5D1JdGbIPqOq9QCaiKI/lzE8kuJx65qxu5q/yYdq35f/eE2xGCuGe5ohzyN1s25tMKCg/RQ9ejrjXsSwhBl6S5ieSMin0DpXweAYFON+5bVFiQ78L2PYDWH4QTtLHsXAzV0JuDTcewUNqNJG61UMiRP3FGk/gX+RHoLKZXvkDx+e53jq4MXrGCIZegt8B2qVdtcsTblfXV6mmPI+RXUKuwwj7sbATlygYwVthdjje8xS7jHM8e5No+SeYYsRwyFlSzL0MjWeNkukd9b922L53Fj1WoYsVRyqURLDLftrT+hAQmnfvy9Wzs2bL2NY9DOkPD6PzoT4NlHyqPL+SGnqfKzkZQxxmKK7eCg3gk//HnxuRQ7ZK13BOWC8lqHoMqy6AuLRwYrjHaH+GhRno/gyhviDqfJXX/Eujr+WjPLKTYs8h8TYMKT8ilxF5yavyYfvt2+K2Dn+9DKGW7TRdwt8hmt2fIrxOVL8qCtUXKno37JK2T7JOHsVQ3w1wS2dULECOXojUKtJfTiuiJz+uhn9HUN8GcOBl+HIZShb6Cisl+BBNxyp8XiDa1y1UwRnI/wyhvh6iVtYoKIhmr/y7itmII2z9Zho3+528JfIX3Z3wBEzLAiedN9NV7AZegnwPHyoZhc4FKykX7ev25gk5udexRAX990PHZ5XLK0DFTeFdi1k3MnqdvgHJDVtpl/EcO5l6MoE0an51ooKhDZpPlVh+uhk6W2GdlaT5V7DEF/zci/+uvs7Ba6/5nU0yDLHypntCk27uq2mzkm/Zp59CcOOlyEV7+FGcOyN58gMbSUFK/sU6ehmyHcCItOcNIQXMMTXvIRzAzTF8IjGR9BLxdtZYqjKmjEkHleaLm/4/QzRsSIheoZlpDhuR9s1GWLLxC+QlhXsZhXjDiFSDLHVR81Q8DK8ZofokRF6RDoYpDiFqjgV//bKD+pMMb4OHDVDbP1uZzLlS1eOxM7CgHq7gY9IKTQkA/BSiv9iyEP3Msy/jOH5Aj4VD6GRGR5PiRjC55Uvg7FM5Yj0FE03uZV7A/fguvYCT6P5GLolXSyfoY9hZamAdQVGQWRcFsDyGd7QUmr6Hr6EEDHDJmF47iylElHA+GpOyA6POyhIXcHbf+YgL8a3NxfA/bTuCxiWbIZOWb9HMYTa9Ukv36kqfUKCaOPB6BudGd9Kvem6dy4GDKkIiBxlzWNjEp759Y6q+vySsK3d3j213U8jpctoGdr98+fucmrLizeAXiPjQfs9Q0hLS1Sd6Jk3kzaZOs+P94gRM7TbWsvnSzMUJVTw7vmsTHI9EdjvU3dUTilXSmo1r2HodpdTrkY5QZle2Ttc7ImiwdPDaHFR6DUM3YtPVHGN/2DQdJrbLK7Bc5V08AKGdcLQ7Xemim042hn/syIMqKzULihEzJDUFqj+eSoE4iKS/+L8Y+A9M5bnr2NI9c/T5TUkxModpZjL8CipvRmNlqFdAaP756nLuDjGXy1734Ls6Yx6xR7frmLS3eW0WuLa031tCqHgD55PU1/AsBVkWKEJ4Qvxu2/7U9kzG0V7IUNP7zVdIcTtQnBHcS+lZcZzV/F8WPcVDLdskKGnUo9zUeM+inxq733ANy+ZFIUjZmgf8/B2tZ5o34KH6d3Vsy+lTj7GX94Pq8eGobd+RqYet2+eu5CHli+NA77TXsVXMBzYDL09n94AgWdGMUf+qqZKcl/3EQyMOSeOO2KGBdJCy/q6Wr3ZqHRA+wOjHdY+a+sj2I1HvsZwPvCVEcToI2Zon7oI9Jp5S4S8gltF9V14CyYPllal7bfU4Ljk7CsY2loq+vvna75ERv7AV5CqbVP26iJq9N7pjJ7y63DIoLfBKxiSDnoheDbXf9qCx1MRcS97SgLowAw6OQP1dj2qMNVhYK8f9tUBRfxhasTzo7YqK7BhR5FO/nRUAnvdLs7ovVV7v29vThZuH94FaxnSMGzE7lQUhMDx4h9HfTAdhJ5bfQ9k3BJYvute92Hom68QByR9hR99nk2n0Z0nuY1NcFPBKyA1bPcsvVqt6lavPUyBsOPPUir+4y8xglJEJKFvwSdmZCBfKNRIIQPdY4rTjQPc4ZB3v4YgdCL3lNN8AJvYzvEOQ+2Rc84Ikqf09CvwfrusTQtw+Ut8DI3x8O7j3Ir0S0fyXj7S5VVQeeO6mFxUp32fg0rv65YceUVu281P+BrI7E90c9megsrn8PJoE+RflJVjgFt8uTUncpPIBkI9CbXVISzG81B6yp7aKRVUtHloltNsdDOvnoZxb/0lARltLGBqg3YXQD4M33VPAJyQwW9zIc1GN5rtmajpx/f2ercb7tb7Td8KTorqCLh5BdUp1d/lbhhG694zPKcjpNHUVtR3EdhYxxpaayJwbPn2mtEgSeRHsw21/JsMcaaq7Dw7YRs3Tw9OBbuLLIeHYw46v0KQzanI4cmWE6FxSy51UaQugxRE4Y7R2C9HqcPaxYcte9u2ujPXXFHPlXDltTGBlhdYu3uxxT1WKquLoZOL4oYJe24pyrIXxmVdwICNcmDpd5Hl3MNtk5AJmdcQ7Wjkb6LOuX3gUOkeGoKErqdFOcD7e5gI53YbNAmp8chgR1THV+MeFGfnKcJMPS08OOiYDIWLN9AYddEWW0lgBfYREXbZCIcIfhdQhG6fe3c+cdZb2k6nW5dtLjstzCh1rA868zp+c+w9KRqJGeIq6qzYYFXB8TpblVOFRt6J9M15I5+dqF0YKyKbzvZdoGtTIV+5UuIEoajVObvTqC4KnRzTEu1Mu5QX5xqjiXM0zC/K1X4HWTZ0ImaHDP+eklG8TZY4zLKI03Ktw+FCxpT9DaGi41NSTUOT1qF94RwAZjjwZw6+SEVPTnBuVywLxDWh/07cHSkeW8fhCfL1VvZtOp90OvlyF23jcW9DlhWY3LQBQwL2mIhhfdJw0p4S3FDavcfb2Iqy7jjDwp+GqqqiIAhqBwYBYcKW6xraCs4bnYGQ7rCTnMaUhU7nz3Tg8NLKjptpibH9cpmWk7HNstvWbNaCKXirBJWUzRVUsVyGdgY3/Vm2082LHLqrTupQkrZq5lTbzcz+xDcmQndPt9rkRMwXbqE0Zpt3+nCm7JzR3hBBFimjag/hh/kB8VGzPzGOGAWvo8my+B6UIXKd2lQQ0e834lFLHazQmkqac7pl+6sIWk8Zyv9TQAwpDbOPntRF3DVdF8mgviyHH81y+FtJtAbOROtCp4z/HYNYE0RaSjVIzzgRS4XoX5FlSd2+rqK2uCwnkisVHehLi9PGREPlgFynEWMVhdhyFEMtL+RJ0pJVYU4jqs6FiYkIHZKoOjuQBszoUOwvcCzb6EQ1n/ybyImUlkIpOTbZ6uTzk7NwtGynnJ+e7TX3VmjhGDoX8pFOgfwO4N7p3JgJrY/K33xfItMM3eZG9S0I/wdZztk75YRfeqHlFgT7C3bqHOe9WGZYFmmQrVlW8Lsg9ZDHYoouy4qtEkphpl5FrB0A+abgDzMVHOC9B4FBwrFFd6I2INJBnzHE/YcWwHOSDHKVzfnF7H8PQ6ig2cFgFpI6L/fobOFwj+bqrSSwrjHGXkatz9WhOVz+JoaXsFy114wuWYsxc1pUjd2QWS9rNem9ktoZ1cO/wPBrVVvUhv3xosYMIZ/qX+PvJ8OcDtW/UG3X/wLD5YrZH/gKYrjeMcxowaBvgG5/1BYWw+x+P8PaTkltxn/71of50RuD/TvoMyNz04b0oCMdplJ3fklSfGH0jkeL6VWqvWNPZ2r9FWJUXa1QHBy960a/eusv/DJYpGGo+q/xcmGZbatqrZV/lyFjnHYf6+Ovap5NkCBBggQJEiRIkCBBggQJEiRIkCBBggQxxH9FJKbfLFQVHgAAAABJRU5ErkJggg==" alt="Logo"/>
+            </div>
+            <div className="list">
+                <ul className="list-items">
+                    <li>Home</li>
+                    <li>About</li>
+                    <li>Contact</li>
+                    <li>Cart</li>
+                    <li>Login</li>
+                </ul>
+            </div>
+        </div>
+     );
+}
 
-// React component 
-const Title=()=>(
-    <h1>This is React Component 🚀</h1>
-)
-// component composition
-const Heading=()=>(
-    <div>
-         <Title/>
-        <h1>This is Another React Component 🚀</h1>
+const ResturantCard = () =>{
+     return(
+        <div className="resturant-card">
+            <img className="resturant-logo" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRv5bCDzQ0KRqJXOmbZdgxoQSIcOtxeprjrVg&s" alt="Resturant-logo"/>
+            <h3>Resturant-Name</h3>
+            <p>Cuisine-Type</p>
+            <p>Rating: 4.5</p>
+        </div>
+     )
+}
+const Body = () =>{
+    return(
+        <div className="body">
+            <div className="search-bar"> Search-Bar</div>
+            <div className="resturant-list">
+                <ResturantCard/>
+            </div>
+        </div>
+    )
+}
+
+const Apps = () => {
+    return(
+    <div className="app"> 
+      <Header/>
+      <Body/>
     </div>
-)
 
-root.render(<Heading/>)
+    );
+}
+    
+    const root = ReactDOM.createRoot(document.getElementById("root"));
+    root.render(<Apps/>);
