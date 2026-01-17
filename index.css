@@ -12,7 +12,7 @@
     width: 100px;
 }
 .logo:hover {
-    background-color: #031211;
+    transform: scale(1.02);
     cursor: pointer;
 }
 .logo-img {
@@ -33,4 +33,29 @@
     list-style-type: none;
     display: flex;
     font-weight: bold;
+}
+.body {
+    gap: 10px;
+    margin-top: 20px;
+}
+.resturant-list {
+    display: flex;
+    flex-wrap: wrap;
+}
+.resturant-card {
+    border: 1px solid #d3d3d3;
+    border-radius: 10px;
+    padding: 5px;
+    margin: 10px;
+    width: 300px;
+    box-shadow: 2px 2px 5px #d3d3d3;
+}
+.resturant-card:hover {
+    box-shadow: 4px 4px 10px #a9a9a9;
+    cursor: pointer;
+}
+.resturant-img {
+    border-radius: 10px;
+    height: 200px;
+    width: 300px;
 }
