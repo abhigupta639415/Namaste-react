@@ -62,4 +62,46 @@
 .top-btn {
     margin: 10px;
     cursor: pointer;
+    padding: 10px 20px;
+    margin-left: 10px;
+    border-radius: 5px;
+    border: none;
+    font-size: 15px;
+}
+
+.top-btn:hover {
+    background-color: #d3d3d3;
+}
+
+.btn-login {
+    cursor: pointer;
+}
+.search-input{
+    padding: 10px;
+    width: 300px;
+    border-radius: 5px;
+    border: 1px solid #d3d3d3;
+    font-size: 16px;
+}
+.filter-btn{
+    padding: 10px 20px;
+    margin-left: 10px;
+    border-radius: 5px;
+    border: none;
+    /* background-color: #e6e9e6; */
+    /* color: white; */
+    font-size: 16px;
+    cursor: pointer;
+}
+.filter-btn:hover{
+    background-color: #d3d3d3;
+}
+.about-card {
+    border: 1px solid #d3d3d3;
+    border-radius: 10px;
+    padding: 20px;
+    /* margin: 20px; */
+    width: 900px;
+    height: 300px;
+    box-shadow: 2px 2px 5px #d3d3d3;
 }

@@ -70,6 +70,71 @@ const Body = () =>{
       },
     },
   },
+   {
+    card: {
+      info: {
+        name: "Blue Tokai Coffee Roasters",
+        city: "Delhi",
+        costForTwo: "30000",
+        costForTwoMessage: "₹300 for two",
+        cuisines: ["Coffee", "Beverages"],
+        avgRating: 4.7,
+        "img":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSw41LvXnTEhtLvIH2gt8-zz36ryqjc8tFr2Q&s",
+      },
+    },
+  },
+  {
+    card: {
+      info: {
+        name: "Cafe Coffee Day",
+        city: "Delhi",
+        costForTwo: "25000",
+        costForTwoMessage: "₹250 for two",
+        cuisines: ["Coffee"],
+        avgRating: 3.9,
+        "img":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1Vg4ZOCkKj41ddeRMuJPW6Hh4UON7L_plRA&s",
+      },
+    },
+  },
+  {
+    card: {
+      info: {
+        name: "Cafe Coffee Day",
+        city: "Delhi",
+        costForTwo: "25000",
+        costForTwoMessage: "₹250 for two",
+        cuisines: ["Coffee"],
+        avgRating: 3.9,
+        "img":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1Vg4ZOCkKj41ddeRMuJPW6Hh4UON7L_plRA&s",
+      },
+    },
+  },
+   {
+    card: {
+      info: {
+        name: "Blue Tokai Coffee Roasters",
+        city: "Delhi",
+        costForTwo: "30000",
+        costForTwoMessage: "₹300 for two",
+        cuisines: ["Coffee", "Beverages"],
+        avgRating: 4.7,
+        "img":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSw41LvXnTEhtLvIH2gt8-zz36ryqjc8tFr2Q&s",
+      },
+    },
+  },
+  {
+    card: {
+      info: {
+        name: "Cafe Coffee Day",
+        city: "Delhi",
+        costForTwo: "25000",
+        costForTwoMessage: "₹250 for two",
+        cuisines: ["Coffee"],
+        avgRating: 3.9,
+        "img":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1Vg4ZOCkKj41ddeRMuJPW6Hh4UON7L_plRA&s",
+      },
+    },
+  },
 ]) ;
 
 // const [restaurants, setRestaurants] = useState([]) ;
@@ -85,19 +150,164 @@ const Body = () =>{
 //    setRestaurants(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
 
 //    } ;
+ const [filteredRestaurants, setFilteredRestaurants] = useState([
+  {
+    card: {
+      info: {
+        name: "Blue Tokai Coffee Roasters",
+        city: "Delhi",
+        costForTwo: "30000",
+        costForTwoMessage: "₹300 for two",
+        cuisines: ["Coffee", "Beverages"],
+        avgRating: 4.7,
+        "img":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSw41LvXnTEhtLvIH2gt8-zz36ryqjc8tFr2Q&s",
+      },
+    },
+  },
+  {
+    card: {
+      info: {
+        name: "Cafe Coffee Day",
+        city: "Delhi",
+        costForTwo: "25000",
+        costForTwoMessage: "₹250 for two",
+        cuisines: ["Coffee"],
+        avgRating: 3.9,
+        "img":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1Vg4ZOCkKj41ddeRMuJPW6Hh4UON7L_plRA&s",
+      },
+    },
+  },
+  {
+    card: {
+      info: {
+        name: "Cafe Coffee Day",
+        city: "Delhi",
+        costForTwo: "25000",
+        costForTwoMessage: "₹250 for two",
+        cuisines: ["Coffee"],
+        avgRating: 3.9,
+        "img":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1Vg4ZOCkKj41ddeRMuJPW6Hh4UON7L_plRA&s",
+      },
+    },
+  },
+   {
+    card: {
+      info: {
+        name: "Blue Tokai Coffee Roasters",
+        city: "Delhi",
+        costForTwo: "30000",
+        costForTwoMessage: "₹300 for two",
+        cuisines: ["Coffee", "Beverages"],
+        avgRating: 4.7,
+        "img":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSw41LvXnTEhtLvIH2gt8-zz36ryqjc8tFr2Q&s",
+      },
+    },
+  },
+  {
+    card: {
+      info: {
+        name: "Cafe Coffee Day",
+        city: "Delhi",
+        costForTwo: "25000",
+        costForTwoMessage: "₹250 for two",
+        cuisines: ["Coffee"],
+        avgRating: 3.9,
+        "img":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1Vg4ZOCkKj41ddeRMuJPW6Hh4UON7L_plRA&s",
+      },
+    },
+  },
+   {
+    card: {
+      info: {
+        name: "Blue Tokai Coffee Roasters",
+        city: "Delhi",
+        costForTwo: "30000",
+        costForTwoMessage: "₹300 for two",
+        cuisines: ["Coffee", "Beverages"],
+        avgRating: 4.7,
+        "img":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSw41LvXnTEhtLvIH2gt8-zz36ryqjc8tFr2Q&s",
+      },
+    },
+  },
+  {
+    card: {
+      info: {
+        name: "Cafe Coffee Day",
+        city: "Delhi",
+        costForTwo: "25000",
+        costForTwoMessage: "₹250 for two",
+        cuisines: ["Coffee"],
+        avgRating: 3.9,
+        "img":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1Vg4ZOCkKj41ddeRMuJPW6Hh4UON7L_plRA&s",
+      },
+    },
+  },
+  {
+    card: {
+      info: {
+        name: "Cafe Coffee Day",
+        city: "Delhi",
+        costForTwo: "25000",
+        costForTwoMessage: "₹250 for two",
+        cuisines: ["Coffee"],
+        avgRating: 3.9,
+        "img":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1Vg4ZOCkKj41ddeRMuJPW6Hh4UON7L_plRA&s",
+      },
+    },
+  },
+   {
+    card: {
+      info: {
+        name: "Blue Tokai Coffee Roasters",
+        city: "Delhi",
+        costForTwo: "30000",
+        costForTwoMessage: "₹300 for two",
+        cuisines: ["Coffee", "Beverages"],
+        avgRating: 4.7,
+        "img":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSw41LvXnTEhtLvIH2gt8-zz36ryqjc8tFr2Q&s",
+      },
+    },
+  },
+  {
+    card: {
+      info: {
+        name: "Cafe Coffee Day",
+        city: "Delhi",
+        costForTwo: "25000",
+        costForTwoMessage: "₹250 for two",
+        cuisines: ["Coffee"],
+        avgRating: 3.9,
+        "img":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1Vg4ZOCkKj41ddeRMuJPW6Hh4UON7L_plRA&s",
+      },
+    },
+  },
+]) ;
 
 
+const [searchText, setSearchText] = useState("") ;
     return(
         <div className="body">
+            <input className="search-input" type="text" placeholder="Search for restaurant...." value={searchText} 
+              onChange={(e)=>{
+                setSearchText(e.target.value);
+              }}
+            />
+            <button className="filter-btn" 
+            onClick={()=>{
+               const filteredRestaurant = restaurants.filter((res)=>
+                res.card.info.name.toLowerCase().includes(searchText.toLowerCase())
+               ) ;
+              setFilteredRestaurants(filteredRestaurant) ;
+            }}>Search</button>
             <button className="top-btn" 
             onClick={()=>{
-               const filteredRestaurants = restaurants.filter( (res)=> res.card.info.avgRating > 4) ;
-               setRestaurants(filteredRestaurants);
+               const filteredRestaurant = restaurants.filter( (res)=> res.card.info.avgRating > 4) ;
+               setFilteredRestaurants(filteredRestaurant);
               }
             }
-            > Top Rated Restaurant</button>
+            > Top Rated Restaurant</button>   
             <div className="resturant-list">
-                {restaurants.map( (res,index)=>
+                {filteredRestaurants.map( (res,index)=>
                     <ResturantCard
                     key={index}
                     restData={res}
